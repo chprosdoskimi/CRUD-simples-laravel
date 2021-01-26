@@ -14,13 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(array('prefix'=>'api'),function(){
     Route::get('/',function(){
         return response()->json(['message'=>'CRUD Api','status'=>'Connected']);
     });
-    Route::resource('users','UsersController');
-});
-
-Route::get('/',function(){
-    return redirect('api');
-});
+    Route::resource('users','App\Http\Controllers\UsersController');
